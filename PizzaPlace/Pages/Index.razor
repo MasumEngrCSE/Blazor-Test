@@ -1,9 +1,45 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<!-- Menu -->
+<h1>Our selection of pizzas</h1>
+@foreach (var pizza in State.Menu.Pizzas)
+{
+    <div class="row">
+        <div class="col">
+            @pizza.Name
+        </div>
+        <div class="col text-right">
+            @($"{pizza.Price:0.00}")
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <img src="@SpicinessImage(pizza.Spiciness)"
+             alt="@pizza.Spiciness" />
+        </div>
+        <div class="col">
+            <button class="btn btn-success pl-4 pr-4"
+                @onclick="@(() => AddToBasket(pizza))">
+                Add
+            </button>
+        </div>
+    </div>
+}
 
-<h1>Hello, world!</h1>
+<!-- End menu -->
 
-Welcome to your new app.
+@code {
+    private State State { get; } = new State();
+    private string SpicinessImage(Spiciness spiciness)=> $"images/{spiciness.ToString().ToLower()}.png";
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    private void AddToBasket(Pizza pizza)=> State.Basket.Add(pizza.Id);
+
+    protected override void OnInitialized()
+    {
+        State.Menu.Add(
+        new Pizza(1, "Pepperoni", 8.99M, Spiciness.Spicy));
+        State.Menu.Add(
+        new Pizza(2, "Margarita", 7.99M, Spiciness.None));
+        State.Menu.Add(
+        new Pizza(3, "Diabolo", 9.99M, Spiciness.Hot));
+    }
+}
