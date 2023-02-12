@@ -1,6 +1,11 @@
 ﻿namespace Blazor_Test.Shared
 {
-    public class Spiciness
-{
-}
+    public enum Spiciness
+    {
+        None,
+        Spicy,
+        Hot
+    }
+
+
 }
