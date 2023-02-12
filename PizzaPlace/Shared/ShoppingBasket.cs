@@ -8,5 +8,7 @@
 
         public void Add(int pizzaId)=> Orders.Add(pizzaId);
 
+        public void RemoveAt(int pos)=> Orders.RemoveAt(pos);
+
     }
 }
