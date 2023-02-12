@@ -14,6 +14,19 @@
 </p>
 
 
+<div style="width: 400px; height: 400px; background: yellow" @onmousemove="OuterMouseMove">
+    @outerPos
+    <div style="width: 300px; height: 300px;background: green; margin:50px" 
+    @onmousemove="InnerMouseMove"
+         @onmousemove:preventDefault="@shouldPreventDefault">
+        >
+        @innerPos
+    </div>
+</div>
+<br />
+
+
+
 <button class="btn btn-primary"
         disabled="@(currentCount > 10)"
 @onclick="IncrementCount">Click me</button>
@@ -50,6 +63,12 @@
             increment -= 1;
         }
     }
+
+
+    private string outerPos = "Nothing yet";
+    private void OuterMouseMove(MouseEventArgs e)=> outerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
+    private string innerPos = "Nothing yet";
+    private void InnerMouseMove(MouseEventArgs e)=> innerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
 
 
     
