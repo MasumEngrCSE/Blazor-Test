@@ -31,23 +31,32 @@
         disabled="@(currentCount > 10)"
 @onclick="IncrementCount">Click me</button>
 
+
+
+<button class="btn btn-secondary"
+        @onclick="AutoIncrement">
+    Auto Increment
+</button>
+
 @code {
     private int currentCount = 0;
     private int increment = 1;
     private bool shouldPreventDefault = true;
     private string BackgroundColor => (currentCount % 2 == 0) ? "red-background" : "yellow-background";
 
-    private void IncrementCount(MouseEventArgs e)
+    private void IncrementCount()
     {
-        if (e.CtrlKey)
-        {
-            currentCount -= increment;
-        }
-        else
-        {
-            currentCount += increment;
-        }
-       // currentCount++;
+        currentCount += 1;
+        Console.WriteLine("++");
+    }
+
+    private void AutoIncrement()
+    {
+        var timer = new System.Threading.Timer(
+        callback: (_) => { IncrementCount(); StateHasChanged(); },
+        state: null,
+        dueTime: TimeSpan.FromSeconds(1),
+        period: TimeSpan.FromSeconds(1));
     }
 
 
@@ -65,10 +74,14 @@
     }
 
 
+
+
     private string outerPos = "Nothing yet";
     private void OuterMouseMove(MouseEventArgs e)=> outerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
     private string innerPos = "Nothing yet";
     private void InnerMouseMove(MouseEventArgs e)=> innerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
+
+
 
 
     

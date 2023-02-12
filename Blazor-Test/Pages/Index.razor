@@ -7,3 +7,11 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+<p>
+    <input @bind="@Today" @bind:format="yyyy-MM-dd" />
+</p>
+
+@code{
+    private DateTime Today { get; set; } = DateTime.Now;
+}
