@@ -90,6 +90,7 @@
 </fieldset>
 
 <!-- End customer entry -->
+@State.ToJson()
 @code {
     private State State { get; } = new State();
     protected override void OnInitialized()
