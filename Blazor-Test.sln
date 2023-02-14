@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_Test", "Blazor-Test\Blazor_Test.csproj", "{0A186C9E-EAD7-40D5-B996-3B201DF1B264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Test", "Blazor-Test\Blazor_Test.csproj", "{0A186C9E-EAD7-40D5-B996-3B201DF1B264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlace", "PizzaPlace\PizzaPlace.csproj", "{1EF9E3CC-FABE-46D3-99D8-2C655E763DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace", "PizzaPlace\PizzaPlace.csproj", "{1EF9E3CC-FABE-46D3-99D8-2C655E763DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

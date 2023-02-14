@@ -4,14 +4,27 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<Alert Show="@ShowAlert">
+<span class="oi oi-check mr-2" aria-hidden="true"></span>
+<strong>Blazor is so cool!</strong>
+</Alert>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<button @onclick="ToggleAlert" class="btn btn-success">Toggle</button>
 
-<p>
+@*Welcome to your new app.*@
+
+@*<SurveyPrompt Title="How is Blazor working for you?" />*@
+
+@*<p>
     <input @bind="@Today" @bind:format="yyyy-MM-dd" />
-</p>
+</p>*@
+
+
+
 
 @code{
-    private DateTime Today { get; set; } = DateTime.Now;
+    //private DateTime Today { get; set; } = DateTime.Now;
+
+    public bool ShowAlert { get; set; } = true;
+    public void ToggleAlert() => ShowAlert = !ShowAlert;
 }
