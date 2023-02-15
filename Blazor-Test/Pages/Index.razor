@@ -4,33 +4,16 @@
 
 <h1>Hello, world!</h1>
 
-@*<Alert Show="@ShowAlert">
-<span class="oi oi-check mr-2" aria-hidden="true"></span>
-<strong>Blazor is so cool!</strong>
-</Alert>*@
 
-
-<DismissibleAlert @bind-Show="@ShowAlert">
+<DismissibleAlert @bind-Show="ShowAlert" @ref="alert">
     <span class="oi oi-check mr-2" aria-hidden="true"></span>
     <strong>Blazor is so cool!</strong>
 </DismissibleAlert>
 
 
 
-
 <button @onclick="ToggleAlert" class="btn btn-success">Toggle</button>
-
-<Timer TimeInSeconds="5" Tick="ToggleAlert"/>
-
-@*Welcome to your new app.*@
-
-@*<SurveyPrompt Title="How is Blazor working for you?" />*@
-
-@*<p>
-    <input @bind="@Today" @bind:format="yyyy-MM-dd" />
-</p>*@
-
-
+<Timer TimeInSeconds="5" Tick="@(() => alert.Dismiss())" />
 
 
 @code{
@@ -39,4 +22,5 @@
     {
         ShowAlert = !ShowAlert;
     }
+    private DismissibleAlert alert = default!;
 }
