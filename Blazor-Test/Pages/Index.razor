@@ -10,7 +10,7 @@
 </Alert>*@
 
 
-<DismissibleAlert Show="@ShowAlert">
+<DismissibleAlert @bind-Show="@ShowAlert">
     <span class="oi oi-check mr-2" aria-hidden="true"></span>
     <strong>Blazor is so cool!</strong>
 </DismissibleAlert>
@@ -34,15 +34,20 @@
 
 
 @code{
-    //private DateTime Today { get; set; } = DateTime.Now;
-
-    public bool ShowAlert { get; set; } = true;
-    //public void ToggleAlert() => ShowAlert = !ShowAlert;
-
+    private bool showAlert = true;
+    public bool ShowAlert
+    {
+        get => showAlert; set
+        {
+            if (value != showAlert)
+            {
+                showAlert = value;
+                StateHasChanged();
+            }
+        }
+    }
     public void ToggleAlert()
     {
-        Console.WriteLine("*** Toggle ***");
         ShowAlert = !ShowAlert;
-        StateHasChanged();
     }
 }
