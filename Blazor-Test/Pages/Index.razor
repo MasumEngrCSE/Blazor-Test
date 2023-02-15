@@ -34,18 +34,7 @@
 
 
 @code{
-    private bool showAlert = true;
-    public bool ShowAlert
-    {
-        get => showAlert; set
-        {
-            if (value != showAlert)
-            {
-                showAlert = value;
-                StateHasChanged();
-            }
-        }
-    }
+    public bool ShowAlert { get; set; } = true;
     public void ToggleAlert()
     {
         ShowAlert = !ShowAlert;
