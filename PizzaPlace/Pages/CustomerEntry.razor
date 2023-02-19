@@ -2,11 +2,13 @@
 <EditForm Model="@Customer"
           OnValidSubmit="@ValidSubmit">
     <DataAnnotationsValidator />
+
+    <InputWatcher FieldChanged="@FieldChanged" @ref="@inputWatcher" />
+
     <fieldset>
         <div class="row mb-2">
             <label class="col-2" for="name">Name:</label>
-            <InputText class="form-control col-6"
-                       @bind-Value="@Customer.Name" />
+            <InputText class="form-control col-6" @bind-Value="@Customer.Name" />
         </div>
         <div class="row mb-2">
             <div class="col-6 offset-2">
@@ -34,7 +36,9 @@
             </div>
         </div>
         <div class="row mb-2">
-            <button class="@ButtonClass">@ButtonTitle</button>
+            <button class="@ButtonClass" disabled="@isInvalid">
+                @ButtonTitle
+            </button>
         </div>
     </fieldset>
 </EditForm>
