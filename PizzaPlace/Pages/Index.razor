@@ -75,7 +75,14 @@
 }*@
 <!-- End shopping basket -->
 <!-- Customer entry -->
-<h1>Please enter your details below</h1>
+
+<CustomerEntry Title="Please enter your details below"
+               Customer="@State.Basket.Customer"
+               ButtonTitle="Checkout"
+               ButtonClass="mx-auto w-25 btn btn-success"
+               ValidSubmit="PlaceOrder" />
+
+@*<h1>Please enter your details below</h1>
 
 <EditForm Model="@State.Basket.Customer" OnValidSubmit="PlaceOrder">
     <DataAnnotationsValidator />
@@ -83,8 +90,6 @@
 
         <div class="row mb-2">
             <label class="col-2" for="name">Name:</label>
-            @*        <input class="col-6" id="name"
-            @bind="State.Basket.Customer.Name" />*@
 
             <InputText class="form-control col-6"
                        @bind-Value="@State.Basket.Customer.Name" />
@@ -132,12 +137,11 @@
             </button>
         </div>
 
-        @*<button @onclick="PlaceOrder">Checkout</button>*@
 
     </fieldset>
 
 </EditForm>
-
+*@
 <!-- End customer entry -->
 @State.ToJson()
 @code {
