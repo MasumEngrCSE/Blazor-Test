@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Test", "Blazor-Test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace", "PizzaPlace\PizzaPlace.csproj", "{1EF9E3CC-FABE-46D3-99D8-2C655E763DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components.Advanced", "Components.Advanced\Components.Advanced.csproj", "{DDC8C14C-0810-4F71-83D5-F7A80B2A64CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Advanced", "Components.Advanced\Components.Advanced.csproj", "{DDC8C14C-0810-4F71-83D5-F7A80B2A64CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
