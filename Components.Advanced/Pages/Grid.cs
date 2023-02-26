@@ -13,4 +13,9 @@ namespace Components.Advanced.Pages
         [Parameter]
         public IReadOnlyList<TItem> Items { get; set; } = default!;
     }
+
+    public class DisposableList<T> where T : IDisposable
+    {
+
+    }
 }
