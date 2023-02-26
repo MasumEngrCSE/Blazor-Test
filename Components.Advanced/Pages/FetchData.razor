@@ -44,6 +44,19 @@ else
         </ItemTemplate>
     </ListView>
 
+    <ListView2 Items="forecasts">
+        <ListTemplate Context="innerTemplate">
+            <ol>
+                @innerTemplate
+            </ol>
+        </ListTemplate>
+        <ItemTemplate Context="forecast">
+            <li>@forecast.Summary</li>
+        </ItemTemplate>
+    </ListView2>
+
+
+
     @*    <table class="table">
         <thead>
             <tr>
@@ -74,7 +87,7 @@ else
 @code {
 
     private RenderFragment<WeatherForecast> forecastTemplate =
-    (forecast) => @<span>@forecast.Summary</span>;
+        (forecast) => @<span>@forecast.Summary</span>;
 
     private WeatherForecast[]? forecasts;
 
