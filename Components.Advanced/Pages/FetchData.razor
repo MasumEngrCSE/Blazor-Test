@@ -37,6 +37,13 @@ else
 
 
 
+
+    <ListView Items="forecasts">
+        <ItemTemplate>
+            @forecastTemplate(context)
+        </ItemTemplate>
+    </ListView>
+
     @*    <table class="table">
         <thead>
             <tr>
@@ -58,9 +65,17 @@ else
             }
         </tbody>
     </table>*@
+
+
+
+
 }
 
 @code {
+
+    private RenderFragment<WeatherForecast> forecastTemplate =
+    (forecast) => @<span>@forecast.Summary</span>;
+
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
