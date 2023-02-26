@@ -13,7 +13,29 @@
 }
 else
 {
-    <table class="table">
+    <Grid Items="forecasts" TItem="WeatherForecast">
+        <Header>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+        </Header>
+        <Row Context="forecast">
+            @*<!-- by default called context -->*@
+            <!-- by default called context, but now called forecast -->
+            <td>@forecast.Date</td>
+            <td>@forecast.TemperatureC</td>
+            <td>@forecast.TemperatureF</td>
+            <td>@forecast.Summary</td>
+        </Row>
+        <Footer>
+        <td colspan="4">Spring is in the air!</td>
+        </Footer>
+    </Grid>
+
+
+
+    @*    <table class="table">
         <thead>
             <tr>
                 <th>Date</th>
@@ -33,7 +55,7 @@ else
                 </tr>
             }
         </tbody>
-    </table>
+    </table>*@
 }
 
 @code {
