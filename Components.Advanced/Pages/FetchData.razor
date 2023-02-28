@@ -1,5 +1,6 @@
 ﻿@page "/fetchdata"
 @inject HttpClient Http
+@*@using Components.Library*@
 
 @*@typeparam TItem where TItem: IDisposable*@
 
@@ -15,7 +16,7 @@
 }
 else
 {
-    <Grid Items="forecasts" TItem="WeatherForecast">
+    <Components.Library.Grid Items="forecasts" TItem="WeatherForecast">
         <Header>
         <th>Date</th>
         <th>Temp. (C)</th>
@@ -33,7 +34,7 @@ else
         <Footer>
         <td colspan="4">Spring is in the air!</td>
         </Footer>
-    </Grid>
+    </Components.Library.Grid>
 
 
 
@@ -44,7 +45,7 @@ else
         </ItemTemplate>
     </ListView>
 
-    <ListView2 Items="forecasts">
+    <Components.Library.ListView2 Items="forecasts">
         <ListTemplate Context="innerTemplate">
             <ol>
                 @innerTemplate
@@ -53,7 +54,7 @@ else
         <ItemTemplate Context="forecast">
             <li>@forecast.Summary</li>
         </ItemTemplate>
-    </ListView2>
+    </Components.Library.ListView2>
 
 
 
