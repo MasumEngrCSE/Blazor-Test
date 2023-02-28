@@ -9,7 +9,20 @@
     <tbody>
         @foreach (var item in Items)
         {
-            <tr>@Row(item)</tr>
+
+            <ErrorBoundary>
+                <ChildContent>
+                    <tr>@Row(item)</tr>
+                </ChildContent>
+                <ErrorContent>
+                    <div>Too cold!</div>
+                </ErrorContent>
+            </ErrorBoundary>
+
+@*            <ErrorBoundary>
+                <tr>@Row(item)</tr>
+            </ErrorBoundary>*@
+            @*<tr>@Row(item)</tr>*@
         }
     </tbody>
 
