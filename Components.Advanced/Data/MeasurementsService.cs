@@ -22,9 +22,13 @@
 
 
 
-        public ValueTask<(List<Measurement>, int)> GetMeasurementsPage(int from, int count, CancellationToken cancellationToken)
+        public async ValueTask<(List<Measurement>, int)> GetMeasurementsPage(int from, int count, CancellationToken cancellationToken)
         {
             const int maxMeasurements = 5000;
+            // Start Add delay
+            const int delay = 50;
+            await Task.Delay(delay, cancellationToken);
+            // End Add delay
             var result = new List<Measurement>();
             var rnd = new Random();
             count = Math.Max(0, Math.Min(count, maxMeasurements - from));
@@ -38,7 +42,8 @@
                     Max = rnd.Next(300, 400),
                 });
             }
-            return new ValueTask<(List<Measurement>, int)>((result, maxMeasurements));
+            return (result, maxMeasurements);
+            //return new ValueTask<(List<Measurement>, int)>((result, maxMeasurements));
         }
 
 
