@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace", "PizzaPlace\Pi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Advanced", "Components.Advanced\Components.Advanced.csproj", "{DDC8C14C-0810-4F71-83D5-F7A80B2A64CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Components.Library", "Components.Library\Components.Library.csproj", "{1E651CEF-B23C-49C8-9E36-2D0A33A025AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Library", "Components.Library\Components.Library.csproj", "{1E651CEF-B23C-49C8-9E36-2D0A33A025AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
