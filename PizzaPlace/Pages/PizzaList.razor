@@ -1,4 +1,19 @@
-﻿@if (Items is null || !Items.Any())
+﻿
+<ItemList Items="@Items">
+    <Header>
+        <h1>@Title</h1>
+    </Header>
+    <RowTemplate Context="pizza">
+        <PizzaItem Pizza="@pizza"
+                   ButtonClass="@ButtonClass"
+                   ButtonTitle="@ButtonTitle"
+                   Selected="@Selected" />
+    </RowTemplate>
+</ItemList>
+
+
+@*
+@if (Items is null || !Items.Any())
 {
     <div>Loading...</div>
 }
@@ -12,7 +27,11 @@ else
            ButtonTitle="@ButtonTitle"
            Selected="@Selected" />
     }
-}
+}*@
+
+
+
+
 
 @code {
 
