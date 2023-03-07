@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IMenuService MenuService
 
 <!-- Menu -->
 <PizzaList Title="Our Selection of Pizzas"
@@ -146,14 +147,24 @@
 @State.ToJson()
 @code {
     private State State { get; } = new State();
-    protected override void OnInitialized()
-    {
-        State.Menu.Add(
-        new Pizza(1, "Pepperoni", 8.99M, Spiciness.Spicy));
-        State.Menu.Add(
-        new Pizza(2, "Margarita", 7.99M, Spiciness.None));
-        State.Menu.Add(
-        new Pizza(3, "Diabolo", 9.99M, Spiciness.Hot));
+    //protected override void OnInitialized()
+    //{
+    //    State.Menu.Add(
+    //    new Pizza(1, "Pepperoni", 8.99M, Spiciness.Spicy));
+    //    State.Menu.Add(
+    //    new Pizza(2, "Margarita", 7.99M, Spiciness.None));
+    //    State.Menu.Add(
+    //    new Pizza(3, "Diabolo", 9.99M, Spiciness.Hot));
+    //}
+
+    protected override async Task OnInitializedAsync()
+    { 
+        Menu menu = await MenuService.GetMenu();
+
+        foreach (Pizza pizza in menu.Pizzas)
+        {
+            State.Menu.Add(pizza);
+        }
     }
 
 
