@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using PizzaPlace.Server;
 using PizzaPlace.Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+
+builder.Services.AddDbContext<PizzaPlaceDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("PizzaPlaceDb")));
+
 
 var app = builder.Build();
 
