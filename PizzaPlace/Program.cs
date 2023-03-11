@@ -27,6 +27,11 @@ namespace PizzaPlace
             });
             builder.Services
             .AddTransient<IMenuService, HardCodedMenuService>();
+
+            builder.Services
+            .AddTransient<IOrderService, ConsoleOrderService>();
+
+
             await builder.Build().RunAsync();
         }
     }

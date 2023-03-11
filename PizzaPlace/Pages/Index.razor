@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IMenuService MenuService
+@inject IOrderService orderService
 
 <!-- Menu -->
 <PizzaList Title="Our Selection of Pizzas"
@@ -8,30 +9,6 @@
            ButtonClass="btn btn-success pl-4 pr-4"
            Selected="@AddToBasket" />
 
-@*<h1>Our selection of pizzas</h1>
-@foreach (var pizza in State.Menu.Pizzas)
-{
-    <div class="row">
-        <div class="col">
-            @pizza.Name
-        </div>
-        <div class="col text-right">
-            @($"{pizza.Price:0.00}")
-        </div>
-        <div class="col"></div>
-        <div class="col">
-            <img src="@SpicinessImage(pizza.Spiciness)"
-             alt="@pizza.Spiciness" />
-        </div>
-        <div class="col">
-            <button class="btn btn-success pl-4 pr-4"
-                @onclick="@(() => AddToBasket(pizza))">
-                Add
-            </button>
-        </div>
-    </div>
-}*@
-
 <!-- End menu -->
 <!-- Shopping Basket -->
 
@@ -39,41 +16,7 @@
                 GetPizzaFromId="@State.Menu.GetPizza"
                 Selected="@RemoveFromBasket" />
 
-@*@if (State.Basket.Orders.Any())
-{
-    <h1 class="">Your current order</h1>
-    @foreach (var (pizza, pos) in State.Basket.Orders.Select((id, pos) => (State.Menu.GetPizza(id), pos)))
-    {
-        <div class="row mb-2">
-            <div class="col">@pizza.Name</div>
-            <div class="col text-right">
-                @($"{pizza.Price:0.00}")
-            </div>
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col">
-                <button class="btn btn-danger" @onclick="@(() => RemoveFromBasket(pos))">Remove</button>
-            </div>
-        </div>
-    }
 
-    <div class="row">
-        <div class="col"></div>
-        <div class="col"><hr /></div>
-        <div class="col"> </div>
-        <div class="col"> </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col"> Total:</div>
-        <div class="col text-right font-weight-bold"> @($"{State.TotalPrice:0.00}") </div>
-        <div class="col"> </div>
-        <div class="col"> </div>
-        <div class="col"> </div>
-    </div>
-
-}*@
 <!-- End shopping basket -->
 <!-- Customer entry -->
 
@@ -83,66 +26,7 @@
                ButtonClass="mx-auto w-25 btn btn-success"
                ValidSubmit="PlaceOrder" />
 
-@*<h1>Please enter your details below</h1>
 
-<EditForm Model="@State.Basket.Customer" OnValidSubmit="PlaceOrder">
-    <DataAnnotationsValidator />
-    <fieldset>
-
-        <div class="row mb-2">
-            <label class="col-2" for="name">Name:</label>
-
-            <InputText class="form-control col-6"
-                       @bind-Value="@State.Basket.Customer.Name" />
-
-        </div>
-        <div class="row mb-2">
-            <div class="col-6 offset-2">
-                <ValidationMessage For="@(() => State.Basket.Customer.Name)" />
-            </div>
-        </div>
-
-
-        <div class="row mb-2">
-            <label class="col-2" for="street">Street:</label>
-            <InputText class="form-control col-6"
-                       @bind-Value="@State.Basket.Customer.Street" />
-
-        </div>
-        <div class="row mb-2">
-            <div class="col-6 offset-2">
-                <ValidationMessage For="@(() => State.Basket.Customer.Street)" />
-            </div>
-        </div>
-
-
-
-        <div class="row mb-2">
-            <label class="col-2" for="city">City:</label>
-            <InputText class="form-control col-6"
-                       @bind-Value="@State.Basket.Customer.City" />
-
-        </div>
-
-        <div class="row mb-2">
-            <div class="col-6 offset-2">
-                <ValidationMessage For="@(() => State.Basket.Customer.City)" />
-            </div>
-        </div>
-
-
-        <div class="row mb-2">
-            <button class="mx-auto w-25 btn btn-success"
-                    @onclick="PlaceOrder">
-                Checkout
-            </button>
-        </div>
-
-
-    </fieldset>
-
-</EditForm>
-*@
 <!-- End customer entry -->
 @State.ToJson()
 @code {
@@ -173,8 +57,9 @@
     private void AddToBasket(Pizza pizza) => State.Basket.Add(pizza.Id);
     private void RemoveFromBasket(int pos) => State.Basket.RemoveAt(pos);
 
-    private void PlaceOrder()
+    private async Task PlaceOrder()
     {
-        Console.WriteLine("Placing order");
+        await orderService.PlaceOrder(State.Basket);
+        //Console.WriteLine("Placing order");
     }
 }
