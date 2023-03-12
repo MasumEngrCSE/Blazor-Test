@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Test", "Blazor-Test\Blazor_Test.csproj", "{0A186C9E-EAD7-40D5-B996-3B201DF1B264}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace", "PizzaPlace\PizzaPlace.csproj", "{1EF9E3CC-FABE-46D3-99D8-2C655E763DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.Client", "PizzaPlace\PizzaPlace.Client.csproj", "{1EF9E3CC-FABE-46D3-99D8-2C655E763DCB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Advanced", "Components.Advanced\Components.Advanced.csproj", "{DDC8C14C-0810-4F71-83D5-F7A80B2A64CE}"
 EndProject
@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components.Library", "Compo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.Server", "PizzaPlace.Server\PizzaPlace.Server.csproj", "{460C93E4-3875-49FA-8440-537901F1F107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Communication.Server", "Blazor.Communication\Server\Blazor.Communication.Server.csproj", "{C7934F30-0EA2-4891-8B51-551E8DA2C384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Server", "Blazor.Communication\Server\Blazor.Communication.Server.csproj", "{C7934F30-0EA2-4891-8B51-551E8DA2C384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Communication.Client", "Blazor.Communication\Client\Blazor.Communication.Client.csproj", "{3CB74CF7-038C-491D-B93E-84EFCAE396EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Client", "Blazor.Communication\Client\Blazor.Communication.Client.csproj", "{3CB74CF7-038C-491D-B93E-84EFCAE396EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Communication.Shared", "Blazor.Communication\Shared\Blazor.Communication.Shared.csproj", "{11062EDF-8368-40C8-89C6-82A3F61643BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Shared", "Blazor.Communication\Shared\Blazor.Communication.Shared.csproj", "{11062EDF-8368-40C8-89C6-82A3F61643BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

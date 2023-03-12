@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using PizzaPlace;
-using PizzaPlace.Shared;
+using PizzaPlace.Client.Shared;
 
 //var builder = WebAssemblyHostBuilder.CreateDefault(args);
 //builder.RootComponents.Add<App>("#app");
@@ -12,7 +12,7 @@ using PizzaPlace.Shared;
 //await builder.Build().RunAsync();
 
 
-namespace PizzaPlace
+namespace PizzaPlace.Client
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace PizzaPlace.Client
+namespace PizzaPlace.Client.Pages
 {
     public static class DebuggingExtensions
     {

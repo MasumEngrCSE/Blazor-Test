@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PizzaPlace.Shared;
+using PizzaPlace.Client.Shared;
 
-namespace PizzaPlace.Pages
+namespace PizzaPlace.Client.Pages
 {
-    public partial class ShoppingBasket
+    public partial class ShoppingBasketList
     {
         [Parameter]
         public IEnumerable<int> Orders { get; set; } = default!;
@@ -23,4 +23,6 @@ namespace PizzaPlace.Pages
             => tuple.pizza.Price).Sum();
         }
     }
+
+
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;
 
-namespace PizzaPlace.Pages
+namespace PizzaPlace.Client.Pages
 {
     public class InputWatcher : ComponentBase
     {

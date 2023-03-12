@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PizzaPlace.Shared;
+using PizzaPlace.Client.Shared;
 
-namespace PizzaPlace.Pages
+namespace PizzaPlace.Client.Pages
 {
     public partial class PizzaItem
     {
