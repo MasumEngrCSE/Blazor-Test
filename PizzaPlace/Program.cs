@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using PizzaPlace;
 using PizzaPlace.Client.Shared;
 using PizzaPlace.Client.Services;
+using PizzaPlace.Shared;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -20,7 +21,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddTransient<IMenuService, MenuService>();
 //builder.Services.AddTransient<IMenuService, HardCodedMenuService>();
 
-builder.Services.AddTransient<IOrderService, ConsoleOrderService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
+//builder.Services.AddTransient<IOrderService, ConsoleOrderService>();
 
 
 await builder.Build().RunAsync();

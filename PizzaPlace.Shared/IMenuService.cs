@@ -1,6 +1,6 @@
 ﻿using PizzaPlace.Shared;
 
-namespace PizzaPlace.Client.Shared
+namespace PizzaPlace.Shared
 {
     public interface IMenuService
     {
