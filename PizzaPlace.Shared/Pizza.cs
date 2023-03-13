@@ -1,4 +1,6 @@
-﻿namespace PizzaPlace.Shared
+﻿using System.Text.Json.Serialization;
+
+namespace PizzaPlace.Shared
 {
     public class Pizza
     {
@@ -13,6 +15,9 @@
         public string Name { get; }
         public decimal Price { get; }
         public Spiciness Spiciness { get; }
+
+        [JsonIgnore]
+        public ICollection<Order>? Orders { get; set; }
     }
 
 
