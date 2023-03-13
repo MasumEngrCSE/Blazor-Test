@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PizzaPlace.Shared\PizzaPlace.Shared.csproj" />
     <ProjectReference Include="..\PizzaPlace\PizzaPlace.Client.csproj" />
   </ItemGroup>
 

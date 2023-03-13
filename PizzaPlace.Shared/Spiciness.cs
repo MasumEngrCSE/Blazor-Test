@@ -1,4 +1,4 @@
-﻿namespace PizzaPlace.Client.Shared
+﻿namespace PizzaPlace.Shared
 {
 
     public enum Spiciness

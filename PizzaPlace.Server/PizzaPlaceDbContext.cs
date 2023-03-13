@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PizzaPlace.Server.Shared;
+using PizzaPlace.Shared;
 
 namespace PizzaPlace.Server
 {

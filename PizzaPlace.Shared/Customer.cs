@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PizzaPlace.Client.Shared
+namespace PizzaPlace.Shared
 {
     public class Customer
     {

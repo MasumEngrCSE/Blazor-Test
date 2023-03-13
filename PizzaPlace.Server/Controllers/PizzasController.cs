@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PizzaPlace.Server.Shared;
+//using PizzaPlace.Server.Shared;
+using PizzaPlace.Shared;
 
 namespace PizzaPlace.Server.Controllers
 {

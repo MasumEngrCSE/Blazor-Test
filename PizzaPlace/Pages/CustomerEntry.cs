@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using PizzaPlace.Client.Shared;
+using PizzaPlace.Shared;
 
 namespace PizzaPlace.Client.Pages
 {

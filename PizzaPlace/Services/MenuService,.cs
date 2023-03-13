@@ -1,4 +1,5 @@
 ﻿using PizzaPlace.Client.Shared;
+using PizzaPlace.Shared;
 using System.Net.Http.Json;
 
 namespace PizzaPlace.Client.Services

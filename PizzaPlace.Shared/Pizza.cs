@@ -1,4 +1,4 @@
-﻿namespace PizzaPlace.Client.Shared
+﻿namespace PizzaPlace.Shared
 {
     public class Pizza
     {
@@ -14,4 +14,12 @@
         public decimal Price { get; }
         public Spiciness Spiciness { get; }
     }
+
+
+    //public enum Spiciness
+    //{
+    //    None,
+    //    Spicy,
+    //    Hot
+    //}
 }
