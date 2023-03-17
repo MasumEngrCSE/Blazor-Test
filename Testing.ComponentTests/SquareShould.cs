@@ -22,5 +22,21 @@ namespace Testing.ComponentTests
             Assert.Equal(expected: 9, actual: actual);
 
         }
+
+
+
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 4)]
+        [InlineData(-1, 1)]
+        public void ReturnSquareOfNumber(int number, int square)
+        {
+            // Arrange
+            var sut = new Utils();
+            // Act
+            var actual = sut.Square(number);
+            // Assert
+            Assert.Equal(expected: square, actual: actual);
+        }
     }
 }
