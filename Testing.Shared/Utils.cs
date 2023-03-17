@@ -10,7 +10,11 @@ namespace Testing.Shared
     {
         public int Square(int i)
         {
-            return i * i;
+            checked
+            {
+                return i * i;
+            }
+            //return i * i;
         }
     }
 }

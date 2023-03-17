@@ -38,5 +38,20 @@ namespace Testing.ComponentTests
             // Assert
             Assert.Equal(expected: square, actual: actual);
         }
+
+        [Fact]
+        public void ThrowOverflowForBigNumbers()
+        {
+            // Arrange
+            var sut = new Utils();
+            // Act & Assert
+            Assert.Throws<OverflowException>(() =>
+            {
+                int result = sut.Square(int.MaxValue);
+            });
+        }
+
+
+
     }
 }
