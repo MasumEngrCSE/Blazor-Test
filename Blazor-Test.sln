@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Client
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Shared", "Blazor.Communication\Shared\Blazor.Communication.Shared.csproj", "{11062EDF-8368-40C8-89C6-82A3F61643BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaPlace.Shared", "PizzaPlace.Shared\PizzaPlace.Shared.csproj", "{6976EB47-5F70-42D4-927B-C409EBD9751D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.Shared", "PizzaPlace.Shared\PizzaPlace.Shared.csproj", "{6976EB47-5F70-42D4-927B-C409EBD9751D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.ComponentTests", "Testing.ComponentTests\Testing.ComponentTests.csproj", "{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{6976EB47-5F70-42D4-927B-C409EBD9751D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6976EB47-5F70-42D4-927B-C409EBD9751D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6976EB47-5F70-42D4-927B-C409EBD9751D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
