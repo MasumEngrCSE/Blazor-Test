@@ -21,9 +21,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Testing.Client\Testing.Client.csproj" />
-    <ProjectReference Include="..\Testing.Shared\Testing.Shared.csproj" />
-  </ItemGroup>
-
 </Project>
