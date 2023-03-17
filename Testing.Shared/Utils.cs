@@ -10,7 +10,7 @@ namespace Testing.Shared
     {
         public int Square(int i)
         {
-            return i;
+            return i * i;
         }
     }
 }
