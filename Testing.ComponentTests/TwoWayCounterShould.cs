@@ -1,4 +1,5 @@
 ﻿using Bunit;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,41 @@ namespace Testing.ComponentTests
             .MarkupMatches($"<p>Current count: {increment}</p>");
         }
 
+
+        [Fact]
+        public void TriggerChangedEventForCurrentCounter()
+        {
+            int nrOfCurrentCountChanged = 0;
+            int nrOfIncrementChanged = 0;
+            var cut = RenderComponent<TwoWayCounter>(parameters =>
+            parameters.Add(counter => counter.CurrentCount, 0)
+            .Add(counter => counter.Increment, 1)
+            .Add(counter => counter.CurrentCountChanged,
+            () => nrOfCurrentCountChanged++)
+            .Add(counter => counter.IncrementChanged,
+            () => nrOfIncrementChanged++)
+            );
+            cut.Find("button").Click();
+            cut.Instance.Increment = 2;
+            nrOfCurrentCountChanged.Should().Be(1);
+            nrOfIncrementChanged.Should().Be(1);
+        }
+
+
+        [Fact]
+        public void TriggerChangedEventForCurrentCounter2()
+        {
+            int nrOfIncrementChanged = 0;
+            var cut = RenderComponent<TwoWayCounter>(parameters =>
+            parameters.Add(counter => counter.CurrentCount, 0)
+            .Add(counter => counter.Increment, 1)
+            .Add(counter => counter.IncrementChanged,
+            () => nrOfIncrementChanged++)
+            );
+            cut.SetParametersAndRender(parameters =>
+            parameters.Add(counter => counter.Increment, 2));
+            nrOfIncrementChanged.Should().Be(1);
+        }
 
 
 
