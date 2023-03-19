@@ -21,11 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Communication.Shared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaPlace.Shared", "PizzaPlace.Shared\PizzaPlace.Shared.csproj", "{6976EB47-5F70-42D4-927B-C409EBD9751D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.ComponentTests", "Testing.ComponentTests\Testing.ComponentTests.csproj", "{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.ComponentTests", "Testing.ComponentTests\Testing.ComponentTests.csproj", "{733A0BD4-35AF-4F56-92EF-5A756C85AD2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Shared", "Testing.Shared\Testing.Shared.csproj", "{CE5902B1-79EE-4C4C-8B7B-FA7F3C975F94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Shared", "Testing.Shared\Testing.Shared.csproj", "{CE5902B1-79EE-4C4C-8B7B-FA7F3C975F94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Client", "Testing.Client\Testing.Client.csproj", "{5F1469AF-22B5-441D-9140-6DFAB4BB8937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Client", "Testing.Client\Testing.Client.csproj", "{5F1469AF-22B5-441D-9140-6DFAB4BB8937}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
