@@ -47,5 +47,34 @@ namespace Testing.ComponentTests
                 p.MarkupMatches("<p>A</p>");
             }
         }
+
+        [Fact]
+        public void RenderItemsWithListItemCorrectly()
+        {
+            const int count = 5;
+            Func<ValueTask<IEnumerable<string>?>> loader =
+            () => new ValueTask<IEnumerable<string>?>(
+            Enumerable.Repeat("A", count));
+            var cut = RenderComponent<TemplatedList<string>>(
+            parameters =>
+            parameters.Add(tl => tl.Loader, loader)
+            /*component*//*TItem*/
+            .Add<ListItem, string>(tl => tl.ItemContent,
+            context => itemParams
+            => itemParams.Add(p => p.Item, context)));
+            var ps = cut.FindAll("p");
+            ps.Should().NotBeEmpty();
+            foreach (var p in ps)
+            {
+                p.MarkupMatches("<p>A</p>");
+            }
+        }
+
+
+
+
+
+
+
     }
 }
