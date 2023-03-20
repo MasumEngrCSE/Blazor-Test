@@ -2,6 +2,7 @@
 @using Testing.Shared
 @*@inject HttpClient Http*@
 @inject IWeatherService WeatherService
+@inject ILogger logger
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -44,6 +45,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        logger.LogInformation("Fetching forecasts");
         forecasts = await WeatherService.GetForecasts();
         //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
