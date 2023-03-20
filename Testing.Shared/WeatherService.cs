@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Testing.Shared
 {
-    public class WeatherService
+    public class WeatherService : IWeatherService
     {
-
+        public ValueTask<IEnumerable<WeatherForecast>> GetForecasts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

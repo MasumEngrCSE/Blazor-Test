@@ -14,16 +14,34 @@ namespace Testing.ComponentTests
 {
     public class FetchDataShould : TestContext
     {
+
+
+
         [Fact]
         public void UseWeatherService()
         {
-            // Use Services for dependency injection
-
-
-            //Services.AddSingleton<IWeatherService,Testing.Shared.WeatherService>();
-            //var cut = RenderComponent<FetchData>();
-            //var rows = cut.FindAll("tbody tr");
-            //rows.Count.Should().Be(5);
+            const int nrOfForecasts = 5;
+            var stub = new WeatherServiceStub
+            {
+                FakeForecasts = Enumerable.Repeat(new WeatherForecast(),
+            nrOfForecasts)
+            };
+            Services.AddSingleton<IWeatherService>(stub);
+            var cut = RenderComponent<FetchData>();
+            var rows = cut.FindAll("tbody tr");
+            rows.Count.Should().Be(nrOfForecasts);
         }
+
+
+        //[Fact]
+        //public void UseWeatherService()
+        //{
+        //    // Use Services for dependency injection
+        //    Services.AddSingleton<IWeatherService,
+        //    Testing.Shared.WeatherService>();
+        //    var cut = RenderComponent<FetchData>();
+        //    var rows = cut.FindAll("tbody tr");
+        //    rows.Count.Should().Be(5);
+        //}
     }
 }
