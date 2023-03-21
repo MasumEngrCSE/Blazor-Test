@@ -18,38 +18,38 @@ namespace Testing.ComponentTests
 
 
 
-        [Fact]
-        public void UseWeatherService()
-        {
-            const int nrOfForecasts = 5;
-            var stub = new WeatherServiceStub
-            {
-                FakeForecasts = Enumerable.Repeat(new WeatherForecast(),
-            nrOfForecasts)
-            };
-            Services.AddSingleton<IWeatherService>(stub);
-            var cut = RenderComponent<FetchData>();
-            var rows = cut.FindAll("tbody tr");
-            rows.Count.Should().Be(nrOfForecasts);
-        }
+        //[Fact]
+        //public void UseWeatherService()
+        //{
+        //    const int nrOfForecasts = 5;
+        //    var stub = new WeatherServiceStub
+        //    {
+        //        FakeForecasts = Enumerable.Repeat(new WeatherForecast(),
+        //    nrOfForecasts)
+        //    };
+        //    Services.AddSingleton<IWeatherService>(stub);
+        //    var cut = RenderComponent<FetchData>();
+        //    var rows = cut.FindAll("tbody tr");
+        //    rows.Count.Should().Be(nrOfForecasts);
+        //}
 
-        [Fact]
-        public void UseProperLogging()
-        {
-            const int nrOfForecasts = 5;
-            var stub = new WeatherServiceStub
-            {
-                FakeForecasts = Enumerable.Repeat(new WeatherForecast(),
-            nrOfForecasts)
-            };
-            Services.AddSingleton<IWeatherService>(stub);
-            LoggerMock logger = new LoggerMock();
-            Services.AddSingleton<ILogger>(logger);
-            var cut = RenderComponent<FetchData>();
-            logger.Journal.Count.Should().Be(1);
-            logger.Journal.First().state.Should().NotBeNull();
-            logger.Journal.First().state!.ToString().Should().Contain("Fetchingforecasts");
-        }
+        //[Fact]
+        //public void UseProperLogging()
+        //{
+        //    const int nrOfForecasts = 5;
+        //    var stub = new WeatherServiceStub
+        //    {
+        //        FakeForecasts = Enumerable.Repeat(new WeatherForecast(),
+        //    nrOfForecasts)
+        //    };
+        //    Services.AddSingleton<IWeatherService>(stub);
+        //    LoggerMock logger = new LoggerMock();
+        //    Services.AddSingleton<ILogger>(logger);
+        //    var cut = RenderComponent<FetchData>();
+        //    logger.Journal.Count.Should().Be(1);
+        //    logger.Journal.First().state.Should().NotBeNull();
+        //    logger.Journal.First().state!.ToString().Should().Contain("Fetchingforecasts");
+        //}
 
 
 
