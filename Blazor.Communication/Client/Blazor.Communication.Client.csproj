@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Shared\Blazor.Communication.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <BlazorWebAssemblyLazyLoad
+    Include="LazyLoading.Library.dll" />
+  </ItemGroup>
+
 </Project>
