@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blazor.Communication\Shared\Blazor.Communication.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

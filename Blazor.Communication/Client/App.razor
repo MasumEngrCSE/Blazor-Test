@@ -31,7 +31,7 @@
 
     private async Task OnNavigate(NavigationContext context)
     {
-        if (context.Path == "counter")
+        if (context.Path == "counter" || context.Path == "fetchdata")
         {
             var assembliesToLoad = new List<string>
                 {
