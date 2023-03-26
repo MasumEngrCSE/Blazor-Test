@@ -2,6 +2,7 @@
 @using PizzaPlace.Shared
 @inject IMenuService MenuService
 @inject IOrderService orderService
+@inject State State
 
 @if (State.Menu.Pizzas.Any())
 {
@@ -46,7 +47,7 @@ else
 
 
 @code {
-    private State State { get; } = new State();
+    //private State State { get; } = new State();
     //protected override void OnInitialized()
     //{
     //    State.Menu.Add(

@@ -23,7 +23,7 @@ builder.Services.AddTransient<IMenuService, MenuService>();
 
 builder.Services.AddTransient<IOrderService, OrderService>();
 //builder.Services.AddTransient<IOrderService, ConsoleOrderService>();
-
+builder.Services.AddSingleton<State>();
 
 await builder.Build().RunAsync();
 
