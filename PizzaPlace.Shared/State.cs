@@ -6,6 +6,8 @@
         public ShoppingBasket Basket { get; } = new ShoppingBasket();
         public UI UI { get; set; } = new UI();
 
+        public Pizza? CurrentPizza { get; set; }
+
         public decimal TotalPrice=> Basket.Orders.Sum(id => Menu.GetPizza(id)!.Price);
 
     }

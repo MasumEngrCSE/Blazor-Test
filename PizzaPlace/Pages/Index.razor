@@ -3,6 +3,7 @@
 @inject IMenuService MenuService
 @inject IOrderService orderService
 @inject State State
+@inject NavigationManager NavigationManager
 
 @if (State.Menu.Pizzas.Any())
 {
@@ -12,7 +13,9 @@
            Items="@State.Menu.Pizzas"
            ButtonTitle="Order"
            ButtonClass="btn btn-success pl-4 pr-4"
-           Selected="@AddToBasket" />
+           Selected="@AddToBasket"
+           ShowPizzaInformation="@ShowPizzaInformation" 
+           />
 
 <!-- End menu -->
 <!-- Shopping Basket -->
@@ -78,5 +81,11 @@ else
     {
         await orderService.PlaceOrder(State.Basket);
         //Console.WriteLine("Placing order");
+    }
+
+    private void ShowPizzaInformation(Pizza selected)
+    {
+        this.State.CurrentPizza = selected;
+        Task.Run(() => this.NavigationManager.NavigateTo("/pizzainfo"));
     }
 }

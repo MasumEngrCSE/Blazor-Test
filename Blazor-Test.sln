@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Shared", "Testing.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.Client", "Testing.Client\Testing.Client.csproj", "{5F1469AF-22B5-441D-9140-6DFAB4BB8937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazyLoading.Library", "LazyLoading.Library\LazyLoading.Library.csproj", "{E86644C8-CE85-4525-AEF2-9441BEAF6CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LazyLoading.Library", "LazyLoading.Library\LazyLoading.Library.csproj", "{E86644C8-CE85-4525-AEF2-9441BEAF6CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
