@@ -47,9 +47,9 @@
     {
         try
         {
+            await localStorage.Init();
             await localStorage.WatchAsync(this);
-            int c = await localStorage
-                .GetProperty<int>(nameof(CurrentCount));
+            int c = await localStorage.GetProperty<int>(nameof(CurrentCount));
 
             //int c = await js.InvokeAsync<int>(
             //"blazorLocalStorage.get", nameof(CurrentCount));
