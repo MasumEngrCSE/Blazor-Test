@@ -9,7 +9,7 @@
     protected override async Task OnInitializedAsync()
     {
         leaflet = await JSRuntime.InvokeAsync<IJSObjectReference>
-        ("import", "./map.js");
+        ("import", "./_content/Leaflet.Map/map.js");
     }
 
 

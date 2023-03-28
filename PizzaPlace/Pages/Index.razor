@@ -5,6 +5,15 @@
 @inject State State
 @inject NavigationManager NavigationManager
 
+<style type="text/css">
+    .map {
+        width: 550px;
+        height: 550px;
+    }
+</style>
+@*<link href="./Index.css" rel="stylesheet" />*@
+
+
 @if (State.Menu.Pizzas.Any())
 {
 
@@ -36,6 +45,13 @@
 
 
 <!-- End customer entry -->
+    <!-- Map -->
+    <div class="map">
+        <Map Zoom="17" />
+    </div>
+    <!-- End Map -->
+
+
 @State.ToJson()
 
 }

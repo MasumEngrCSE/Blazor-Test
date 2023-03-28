@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Leaflet.Map\Leaflet.Map.csproj" />
     <ProjectReference Include="..\PizzaPlace.Shared\PizzaPlace.Shared.csproj" />
   </ItemGroup>
 
