@@ -1,5 +1,8 @@
 ﻿@page "/counter"
-@inject IJSRuntime js
+@using JSInterop.Client.Services
+@using Microsoft.AspNetCore.Components
+@*@inject IJSRuntime js*@
+@inject ILocalStorage localStorage;
 
 <PageTitle>Counter</PageTitle>
 
@@ -16,7 +19,7 @@
 
 @code {
     private int currentCount = 0;
-    private ElementReference? inputElement;
+    //private ElementReference? inputElement;
 
     public int CurrentCount
     {
@@ -26,8 +29,11 @@
             if (currentCount != value)
             {
                 currentCount = value;
-                js.InvokeVoidAsync("blazorLocalStorage.set",
-                nameof(CurrentCount), currentCount);
+                //js.InvokeVoidAsync("blazorLocalStorage.set",
+                //nameof(CurrentCount), currentCount);
+
+                localStorage
+    .SetProperty<int>(nameof(CurrentCount), currentCount);
             }
         }
     }
@@ -41,23 +47,32 @@
     {
         try
         {
-            int c = await js.InvokeAsync<int>(
-            "blazorLocalStorage.get", nameof(CurrentCount));
+            await localStorage.WatchAsync(this);
+            int c = await localStorage
+                .GetProperty<int>(nameof(CurrentCount));
+
+            //int c = await js.InvokeAsync<int>(
+            //"blazorLocalStorage.get", nameof(CurrentCount));
             currentCount = c;
         }
         catch { }
     }
 
-
+    private ElementReference inputElement = default!;
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (inputElement is not null)
+        if (firstRender)
         {
-            await js.InvokeVoidAsync("blazorFocus.set", inputElement);
+            await inputElement.FocusAsync();
         }
 
-        var objRef = DotNetObjectReference.Create(this);
-        await js.InvokeVoidAsync("blazorLocalStorage.watch", objRef);
+        //if (inputElement is not null)
+        //{
+        //    await js.InvokeVoidAsync("blazorFocus.set", inputElement);
+        //}
+
+        //var objRef = DotNetObjectReference.Create(this);
+        //await js.InvokeVoidAsync("blazorLocalStorage.watch", objRef);
     }
 
 
@@ -65,8 +80,13 @@
     [JSInvokable]
     public async Task UpdateCounter()
     {
-        int c = await js.InvokeAsync<int>("blazorLocalStorage.get",
-        nameof(CurrentCount));
+        int c = await localStorage
+    .GetProperty<int>(nameof(CurrentCount));
+        //int c = await js.InvokeAsync<int>("blazorLocalStorage.get",
+        //nameof(CurrentCount));
+
+
+
         currentCount = c;
         this.StateHasChanged();
     }
