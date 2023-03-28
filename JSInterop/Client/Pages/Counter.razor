@@ -7,10 +7,16 @@
 
 <p role="status">Current count: @CurrentCount</p>
 
+
+<div>
+    <input @ref="inputElement" @bind="@CurrentCount" />
+</div>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
+    private ElementReference? inputElement;
 
     public int CurrentCount
     {
@@ -40,5 +46,14 @@
             currentCount = c;
         }
         catch { }
+    }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (inputElement is not null)
+        {
+            await js.InvokeVoidAsync("blazorFocus.set", inputElement);
+        }
     }
 }
