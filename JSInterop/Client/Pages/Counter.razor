@@ -55,5 +55,19 @@
         {
             await js.InvokeVoidAsync("blazorFocus.set", inputElement);
         }
+
+        var objRef = DotNetObjectReference.Create(this);
+        await js.InvokeVoidAsync("blazorLocalStorage.watch", objRef);
+    }
+
+
+
+    [JSInvokable]
+    public async Task UpdateCounter()
+    {
+        int c = await js.InvokeAsync<int>("blazorLocalStorage.get",
+        nameof(CurrentCount));
+        currentCount = c;
+        this.StateHasChanged();
     }
 }
