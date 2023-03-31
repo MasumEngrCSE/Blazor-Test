@@ -5,6 +5,11 @@
 @code {
     string elementId = $"map-{Guid.NewGuid().ToString("D")}";
     [Parameter] public double Zoom { get; set; } = 17.0;
+
+    [Parameter]
+    public List<Marker> Markers { get; set; }= new List<Marker>();
+
+
     private IJSObjectReference leaflet;
     protected override async Task OnInitializedAsync()
     {
@@ -18,7 +23,7 @@
         if (leaflet is not null)
         {
             await leaflet.InvokeVoidAsync("showOrUpdate",
-            elementId, Zoom/*, Markers*/);
+            elementId, Zoom, Markers);
         }
     }
 

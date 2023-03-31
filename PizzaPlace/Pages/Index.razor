@@ -47,7 +47,7 @@
 <!-- End customer entry -->
     <!-- Map -->
     <div class="map">
-        <Map Zoom="17" />
+        <Map Zoom="17" Markers="@Markers" />
     </div>
     <!-- End Map -->
 
@@ -104,4 +104,19 @@ else
         this.State.CurrentPizza = selected;
         Task.Run(() => this.NavigationManager.NavigateTo("/pizzainfo"));
     }
+
+    private List<Marker> Markers = new List<Marker> {
+new Marker {
+X = 4.29660,
+Y = 50.88022,
+Description = "Pizza Place" },
+new Marker {
+X = 4.27638,
+Y = 50.87136,
+Description = "You",
+ShowPopup = true },
+};
+
+
+
 }
