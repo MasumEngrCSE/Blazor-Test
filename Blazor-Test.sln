@@ -39,6 +39,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaflet.Map", "Leaflet.Map\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagementWASM", "StateManagementWASM\StateManagementWASM.csproj", "{3D427105-7194-44D0-8094-B9FA85F22612}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingRedux.Server", "UsingRedux\Server\UsingRedux.Server.csproj", "{47D32284-CCFE-4FCC-9A6D-8D235977DFC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingRedux.Client", "UsingRedux\Client\UsingRedux.Client.csproj", "{712DFC8E-8CD0-414B-B54E-7828BF08F329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingRedux.Shared", "UsingRedux\Shared\UsingRedux.Shared.csproj", "{DAF4CEF5-38D2-45C8-9927-B245250D1E51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +123,18 @@ Global
 		{3D427105-7194-44D0-8094-B9FA85F22612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D427105-7194-44D0-8094-B9FA85F22612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D427105-7194-44D0-8094-B9FA85F22612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D32284-CCFE-4FCC-9A6D-8D235977DFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D32284-CCFE-4FCC-9A6D-8D235977DFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D32284-CCFE-4FCC-9A6D-8D235977DFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D32284-CCFE-4FCC-9A6D-8D235977DFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712DFC8E-8CD0-414B-B54E-7828BF08F329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712DFC8E-8CD0-414B-B54E-7828BF08F329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712DFC8E-8CD0-414B-B54E-7828BF08F329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712DFC8E-8CD0-414B-B54E-7828BF08F329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF4CEF5-38D2-45C8-9927-B245250D1E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF4CEF5-38D2-45C8-9927-B245250D1E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF4CEF5-38D2-45C8-9927-B245250D1E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF4CEF5-38D2-45C8-9927-B245250D1E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
