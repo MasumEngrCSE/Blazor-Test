@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSInterop.Client", "JSInter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JSInterop.Shared", "JSInterop\Shared\JSInterop.Shared.csproj", "{2089FFD7-8E02-4585-9A46-69A599443B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leaflet.Map", "Leaflet.Map\Leaflet.Map.csproj", "{1FB1FFAC-3BA8-4703-8934-D423F712484E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leaflet.Map", "Leaflet.Map\Leaflet.Map.csproj", "{1FB1FFAC-3BA8-4703-8934-D423F712484E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagementWASM", "StateManagementWASM\StateManagementWASM.csproj", "{3D427105-7194-44D0-8094-B9FA85F22612}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{1FB1FFAC-3BA8-4703-8934-D423F712484E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB1FFAC-3BA8-4703-8934-D423F712484E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FB1FFAC-3BA8-4703-8934-D423F712484E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D427105-7194-44D0-8094-B9FA85F22612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D427105-7194-44D0-8094-B9FA85F22612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D427105-7194-44D0-8094-B9FA85F22612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D427105-7194-44D0-8094-B9FA85F22612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
