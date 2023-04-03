@@ -1,6 +1,7 @@
 using Fluxor;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using UsingRedux.Client;
 using UsingRedux.Shared.Stores;
