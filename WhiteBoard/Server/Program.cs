@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using WhiteBoard.Server.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes
+    .Concat(new[] { "application/octet-stream" });
+});
 
 var app = builder.Build();
 
@@ -20,6 +27,9 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseResponseCompression();
+
+
 
 app.UseHttpsRedirection();
 
@@ -31,6 +41,7 @@ app.UseRouting();
 
 app.MapRazorPages();
 app.MapControllers();
+app.MapHub<BoardHub>("/board");
 app.MapFallbackToFile("index.html");
 
 app.Run();
