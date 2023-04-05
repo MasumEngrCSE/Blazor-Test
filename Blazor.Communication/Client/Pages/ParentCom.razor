@@ -1,6 +1,9 @@
 ﻿@page "/parentCom"
 <h3>Parent Component</h3>
 
+
+<hr />
+
 <p><b>Parent Value:</b>@parentString</p>
 
 <ChildCom1 
@@ -8,12 +11,31 @@
     FromChild=@receiveFromChild>
 
 </ChildCom1>
+<hr />
+<p>
+    <h5>From Com 2:</h5><br />
+    @logString
 
+</p>
 
-
-<ChildCom2>
+<ChildCom2
+    Trigger="@triggerfromChild"
+>
 
 </ChildCom2>
+
+<hr />
+
+<p>
+    <h5>From Com 3:</h5><br />
+    @logString3
+
+</p>
+<ChildCom3
+    EvenfromChild=@triggerfromChild3>
+
+</ChildCom3>
+
 
 @code {
     private string parentString = "Initial Parent String";
@@ -23,5 +45,26 @@
 
         StateHasChanged();
     }
+
+
+    ////Component 2 releted method
+    private string logString = "";
+    private void triggerfromChild(MouseEventArgs e){
+        logString = "Com 2 Button Press on"+ DateTime.Now;
+        //e.ToString();
+    }
+
+
+
+    ///com3
+
+
+    private string logString3 = "";
+    private void triggerfromChild3()
+    {
+        logString3 = "Com 3 Button Press on" + DateTime.Now;
+        StateHasChanged();
+    }
+
 
 }

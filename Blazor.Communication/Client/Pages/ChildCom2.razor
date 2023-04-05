@@ -1,5 +1,15 @@
-﻿<h3>childCom2</h3>
+﻿<h3>child Component 2</h3>
+<p>
+    Approach 2:
+    This approach specifies any ChangeEvents using EventCallback datatype and we can pass between components instead of data, and there is no need for StateHasChanged() function to call here
+</p>
+
+<button onclick="@Trigger" class="btn btn-info">Trigger</button>
+
+
 
 @code {
 
+    [Parameter]
+    public EventCallback<MouseEventArgs> Trigger{ get; set; }
 }

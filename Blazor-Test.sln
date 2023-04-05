@@ -45,11 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingRedux.Client", "UsingR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsingRedux.Shared", "UsingRedux\Shared\UsingRedux.Shared.csproj", "{DAF4CEF5-38D2-45C8-9927-B245250D1E51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard.Server", "WhiteBoard\Server\WhiteBoard.Server.csproj", "{F6A7C160-19B4-4DA9-BC6D-166EB7AC651D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Server", "WhiteBoard\Server\WhiteBoard.Server.csproj", "{F6A7C160-19B4-4DA9-BC6D-166EB7AC651D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard.Client", "WhiteBoard\Client\WhiteBoard.Client.csproj", "{155A5AD9-4FD5-4D21-B98F-C5C107B5B3BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Client", "WhiteBoard\Client\WhiteBoard.Client.csproj", "{155A5AD9-4FD5-4D21-B98F-C5C107B5B3BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard.Shared", "WhiteBoard\Shared\WhiteBoard.Shared.csproj", "{93DED42A-D887-49E2-AE33-02246E6C522F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Shared", "WhiteBoard\Shared\WhiteBoard.Shared.csproj", "{93DED42A-D887-49E2-AE33-02246E6C522F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

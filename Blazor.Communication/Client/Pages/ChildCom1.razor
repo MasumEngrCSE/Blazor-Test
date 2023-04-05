@@ -1,10 +1,15 @@
 ﻿<h3>Child Component - 1</h3>
-
+<p>
+    Approach 1:
+    The data passed between components happens through Component attributes and its properties mapping, this approach uses _Action TItem  datatype.
+</p>
 
 
 <button onclick="@passToParent" class="btn btn-primary"> Pass Date To Parent</button>
 
 <p><b>Receive From Parent:</b>@toChild</p>
+
+
 
 @code {
     [Parameter]
