@@ -1,0 +1,27 @@
+﻿@page "/parentCom"
+<h3>Parent Component</h3>
+
+<p><b>Parent Value:</b>@parentString</p>
+
+<ChildCom1 
+    toChild=@parentString
+    FromChild=@receiveFromChild>
+
+</ChildCom1>
+
+
+
+<ChildCom2>
+
+</ChildCom2>
+
+@code {
+    private string parentString = "Initial Parent String";
+
+    private void receiveFromChild(string strVal){
+        parentString = strVal;
+
+        StateHasChanged();
+    }
+
+}

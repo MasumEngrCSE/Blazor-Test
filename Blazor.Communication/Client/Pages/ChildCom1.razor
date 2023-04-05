@@ -1,0 +1,21 @@
+﻿<h3>Child Component - 1</h3>
+
+
+
+<button onclick="@passToParent" class="btn btn-primary"> Pass Date To Parent</button>
+
+<p><b>Receive From Parent:</b>@toChild</p>
+
+@code {
+    [Parameter]
+    public string toChild { get; set; }
+
+    [Parameter]
+    public Action<string> FromChild { get; set; }
+
+
+    private void passToParent(){
+        FromChild("Value From Child:" + DateTime.Now);
+    }
+
+}
