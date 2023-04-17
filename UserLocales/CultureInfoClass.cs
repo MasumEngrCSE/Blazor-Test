@@ -25,6 +25,19 @@ namespace UserLocales
             var nlBE = new CultureInfo("nl-BE");
             Console.WriteLine(nlBE.DateTimeFormat.GetDayName(DayOfWeek.Monday));
             Console.WriteLine(nlBE.NumberFormat.NumberDecimalSeparator);
+
+            Console.WriteLine(DateTime.Now.ToString("D", nlBE));
+
+
+
+            CultureInfo.CurrentCulture = nlBE;
+            Console.WriteLine($"{DateTime.Now:D}");
         }
+
+
+   
+
+
+
     }
 }
