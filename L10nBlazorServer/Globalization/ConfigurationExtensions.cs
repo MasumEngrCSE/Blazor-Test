@@ -1,4 +1,7 @@
-﻿namespace L10nBlazorServer.Globalization
+﻿using Microsoft.AspNetCore.Localization;
+using System.Configuration;
+
+namespace L10nBlazorServer.Globalization
 {
     public static class ConfigurationExtensions
     {
@@ -7,5 +10,17 @@
                     => configuration.GetSection("Cultures")
                     .GetChildren()
                     .ToDictionary(k => k.Key, v => v.Value);
+
+
+
+
+
+
+
+
+
     }
+
+
+
 }
