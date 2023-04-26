@@ -51,7 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Client", "WhiteB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Shared", "WhiteBoard\Shared\WhiteBoard.Shared.csproj", "{93DED42A-D887-49E2-AE33-02246E6C522F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserLocales", "UserLocales\UserLocales.csproj", "{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserLocales", "UserLocales\UserLocales.csproj", "{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10nBlazorServer", "L10nBlazorServer\L10nBlazorServer.csproj", "{232E5143-0638-4EF1-8105-4DC9624ED627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232E5143-0638-4EF1-8105-4DC9624ED627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232E5143-0638-4EF1-8105-4DC9624ED627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232E5143-0638-4EF1-8105-4DC9624ED627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232E5143-0638-4EF1-8105-4DC9624ED627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
