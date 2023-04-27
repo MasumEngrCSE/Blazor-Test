@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBoard.Shared", "WhiteB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserLocales", "UserLocales\UserLocales.csproj", "{BCCAEA8A-68CF-4E2A-B659-0DB0E2B69F5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10nBlazorServer", "L10nBlazorServer\L10nBlazorServer.csproj", "{232E5143-0638-4EF1-8105-4DC9624ED627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L10nBlazorServer", "L10nBlazorServer\L10nBlazorServer.csproj", "{232E5143-0638-4EF1-8105-4DC9624ED627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
