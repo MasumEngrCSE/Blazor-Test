@@ -1,12 +1,19 @@
 ﻿@page "/"
 @using System.Globalization
+@inject IStringLocalizer<Index> localizer
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>@localizer.GetString("Hello, world!")</h1>
+@*<h1>Hello, world!</h1>*@
 
-Welcome to your new app.
+<p>@localizer["Welcome to your new app."]</p>
+@*Welcome to your new app.*@
 
-Current culture : @CultureInfo.CurrentCulture.Name
+<p>@localizer["Current culture :"] @CultureInfo.CurrentCulture.Name</p>
+@*Current culture : @CultureInfo.CurrentCulture.Name*@
+
+<p>Pi = @Math.PI</p>
+<p>@localizer["Today's date is"] @DateTime.Now.ToLongDateString()</p>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
