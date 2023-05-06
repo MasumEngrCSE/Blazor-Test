@@ -1,8 +1,16 @@
+using IdentityProvider;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddIdentityServer();
+
+builder.Services.AddIdentityServer()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddTestUsers(Config.GetUsers())
+                .AddInMemoryClients(Config.GetClients())
+                .AddDeveloperSigningCredential();
 
 
 var app = builder.Build();
